@@ -1,0 +1,53 @@
+GUI regression tests
+
+- test framework used for tests is jest 
+- puppeteer library used for browser automation testing (promotes and facilitates browser interactiveness)
+- puppeteer is done to aid with end to end testing of UI automatically
+- functions of puppeteer 
+    automated browser testing  - it automates interactions with web pages in browser environment (navigation and clicking)
+    end to end testing  - ocmplete workflow of pp from start to finish
+    cross browser testing - ensuring tests work on other browsers
+    visual regression testing - use of snapshots taken by test to be used for visula confirmation at a later stage 
+    performance testing - metrics like load time, time to interactive 
+    headless testing - allows you to make tests without visible UI, a function useful for CI/CD
+- jest snapshot tests are used to ensure that the UI does not change unexpectedly
+- dependencies to install for snapshot tests on angular
+    npm install --save-dev @types/react-test-renderer
+    npm install --save-dev react-test-renderer
+    npm install --save react@15.4.0 react-dom@15.4.0
+    npm install @babel/core @babel/preset-env @babel/preset-react babel-loader --save-dev
+    npm install --save-dev @babel/preset-react @babel/preset-env @babel/plugin-transform-react-jsx
+    npm install react@latest react-dom@latest react-test-renderer@latest --legacy-peer-deps
+-  snapshot tests are mostly used for regression tests, documentation 
+- snapshots capture the captured rendered uotput of a component at a specific point in time 
+- these snapshots are stored in text files and when ou run tests again , jest compares the current output of the component to the 
+stored snapshot
+- if the output is changed jest will alert you, helping you catch unintended changes in UI 
+
+Mocks
+- use of mock servers to mock behaviour of APIs services (java services)
+- these mocks aid in supplying required data for API calls a UI needs to make from backend services
+- a mock server tecnically makes use of the url to the required API, parameters if any, request required by API and the response returned
+- the request should also include sample data including the headers if any are specified as on the API request
+- the response should also mimic the sample structure as required at the client side 
+
+GUI mocks 
+- similar to service mocks GUI mocks are also the same 
+- a view requires request and response for it to display certain data on the UI 
+- hence such infomation can also be represented in mock from- we will need to identify the requirements of the UI 
+for each API called for UI we take the request and response as they are and mock them so as to have a UI view constructed without
+use of actuall API calls or process procedure to get to a certain Mocks
+
+
+steps taken for regression testing 
+- run API mock service (java service mocks)
+- run GUI mocks (mocks for UI views)
+- ruin a test using npm run test to start testing process
+- run mock GUI using mock profile ie. npm run start:mock
+- once he GUI starts you can navigate the GUI as if a claim is already on MS for example ms1A
+
+
+- using puppeteer and jest the library makes use of the running app to lauch it automatically
+so once test begin the automation begins and the automation launches the app and navigates through it 
+- at this point the tests will bechecking to see if everything is running as required and UI changes done appropriately
+

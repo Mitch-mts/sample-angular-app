@@ -25,3 +25,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+dependencies to install
+npm install --save-dev @testing-library/jest-dom
+npm install --save-dev jest @types/jest jest-preset-angular ts-jest @testing-library/angular @testing-library/jest-dom
